@@ -5,7 +5,7 @@ input.addEventListener("input", createName);
 
 function createName(name) {
   span.textContent = name.currentTarget.value;
-  if (name.currentTarget.value == "") {
+  if (name.currentTarget.value === "") {
     span.textContent = "Anonymous";
   }
 }
