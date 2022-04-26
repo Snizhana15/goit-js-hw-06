@@ -1,14 +1,11 @@
-const refs = {
-  input: document.querySelector("#name-input"),
-  span: document.querySelector("#name-output"),
-};
-const createName = name => {
-  name.preventDefault();
-  if (name === "") {
-    refs.span.textContent = "Anonymous";
-  } else {
-    refs.span.textContent = name.currentTarget.value;
-  }
-};
+const input = document.querySelector("#name-input");
+const span = document.querySelector("#name-output");
 
-refs.input.addEventListener("input", createName);
+input.addEventListener("input", createName);
+
+function createName(name) {
+  span.textContent = name.currentTarget.value;
+  if (name.currentTarget.value === "") {
+    span.textContent = "Anonymous";
+  }
+}
